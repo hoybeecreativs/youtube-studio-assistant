@@ -131,17 +131,34 @@ Error generating stack: `+l.message+`
         const featuresLink = footerLinks.find(a => a.textContent.trim() === 'Features');
         
         if (featuresLink && !document.querySelector('a[href="/about.html"]')) {
+          // Get computed styles from Features link
+          const computedStyle = window.getComputedStyle(featuresLink);
+          
           // Create About link
           const aboutLink = document.createElement('a');
           aboutLink.href = '/about.html';
           aboutLink.textContent = 'About';
           aboutLink.className = featuresLink.className;
+          // Copy all relevant styles
+          aboutLink.style.display = computedStyle.display;
+          aboutLink.style.marginTop = computedStyle.marginTop;
+          aboutLink.style.marginBottom = computedStyle.marginBottom;
+          aboutLink.style.marginLeft = computedStyle.marginLeft;
+          aboutLink.style.marginRight = computedStyle.marginRight;
+          aboutLink.style.padding = computedStyle.padding;
           
           // Create Team link
           const teamLink = document.createElement('a');
           teamLink.href = '/team.html';
           teamLink.textContent = 'Team';
           teamLink.className = featuresLink.className;
+          // Copy all relevant styles
+          teamLink.style.display = computedStyle.display;
+          teamLink.style.marginTop = computedStyle.marginTop;
+          teamLink.style.marginBottom = computedStyle.marginBottom;
+          teamLink.style.marginLeft = computedStyle.marginLeft;
+          teamLink.style.marginRight = computedStyle.marginRight;
+          teamLink.style.padding = computedStyle.padding;
           
           // Insert after Features link
           featuresLink.parentNode.insertBefore(aboutLink, featuresLink.nextSibling);
