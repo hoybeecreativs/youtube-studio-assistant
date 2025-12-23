@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Our Team - YouTube Studio Assistant</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/images/favicon-512x512.png">
+  <meta name="theme-color" content="#4F46E5">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" crossorigin href="/assets/index-CeHq9Kcz.css">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #667eea;
+    }
+    
+    .nav-links a.active {
+      color: #667eea;
+      font-weight: 600;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .hero-section {
+      text-align: center;
+      margin-bottom: 4rem;
+      color: white;
+    }
+    
+    .hero-section h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .hero-section p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .intro-section {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .intro-section p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #4a5568;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .team-member {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .member-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #f7fafc;
+    }
+    
+    .member-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+    
+    .member-info h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .member-role {
+      font-size: 1.1rem;
+      color: #667eea;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .member-description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #4a5568;
+      margin-bottom: 2rem;
+    }
+    
+    .member-section {
+      margin-bottom: 2rem;
+    }
+    
+    .member-section h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .expertise-list, .responsibility-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .expertise-list li, .responsibility-list li {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      background: #f7fafc;
+      border-radius: 8px;
+      border-left: 3px solid #667eea;
+      font-size: 1rem;
+      color: #2d3748;
+    }
+    
+    .expertise-list li::before {
+      content: '⚡';
+      margin-right: 0.5rem;
+    }
+    
+    .responsibility-list li::before {
+      content: '✓';
+      margin-right: 0.5rem;
+      color: #667eea;
+      font-weight: 700;
+    }
+    
+    .contact-section {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      margin-top: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .contact-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+    }
+    
+    .contact-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+    
+    .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    }
+    
+    .footer {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    .footer p {
+      color: #4a5568;
+      margin: 0.5rem 0;
+    }
+    
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .member-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .team-member {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="logo">
+        <img src="/images/icon128.png" alt="Logo">
+        YouTube Studio Assistant
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/about.html">About</a>
+        <a href="/team.html" class="active">Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <h1>Meet Our Team</h1>
+      <p>The passionate professionals behind YouTube Studio Assistant</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Introduction -->
+    <div class="intro-section">
+      <p>
+        The Hoybee Creativs team consists of experienced professionals who are passionate about AI and the creator economy. We work together to build solutions that are not only technically powerful but also user-friendly and accessible to all creators. Our diverse expertise allows us to tackle challenges from multiple angles, ensuring that YouTube Studio Assistant delivers real value to our users.
+      </p>
+    </div>
+
+    <!-- Team Members -->
+    <div class="team-grid">
+      <!-- Team Member 1: Bandi -->
+      <div class="team-member">
+        <div class="member-header">
+          <div class="member-avatar">B</div>
+          <div class="member-info">
+            <h2>Bandi</h2>
+            <p class="member-role">Founder & Lead Developer</p>
+          </div>
+        </div>
+        
+        <p class="member-description">
+          Bandi is an experienced developer and analyst with a strong passion for AI and automation. With a robust technical background, Bandi leads the development of YouTube Studio Assistant, ensuring the product leverages cutting-edge technology to deliver maximum value to creators. As the founder, Bandi is responsible for the overall vision, technical strategy, and product roadmap.
+        </p>
+        
+        <div class="member-section">
+          <h3>💡 Expertise</h3>
+          <ul class="expertise-list">
+            <li>Software Development & Architecture</li>
+            <li>AI/ML Integration & Implementation</li>
+            <li>Backend Development & API Design</li>
+            <li>Product Strategy & Vision</li>
+            <li>System Analysis & Optimization</li>
+          </ul>
+        </div>
+        
+        <div class="member-section">
+          <h3>🎯 Key Responsibilities</h3>
+          <ul class="responsibility-list">
+            <li>Technical Leadership & Decision Making</li>
+            <li>Product Development & Engineering</li>
+            <li>Technology Stack Selection</li>
+            <li>Infrastructure & Scalability Planning</li>
+            <li>Code Quality & Best Practices</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Team Member 2: Sukmayoni -->
+      <div class="team-member">
+        <div class="member-header">
+          <div class="member-avatar">S</div>
+          <div class="member-info">
+            <h2>Sukmayoni</h2>
+            <p class="member-role">Co-founder & Business Analyst</p>
+          </div>
+        </div>
+        
+        <p class="member-description">
+          Sukmayoni is a strategic analyst with expertise in business development and market analysis. With a keen eye for market trends and user needs, Sukmayoni ensures that YouTube Studio Assistant aligns with market demands and delivers strong value propositions. As co-founder, Sukmayoni plays a crucial role in shaping the business strategy and growth trajectory of Hoybee Creativs.
+        </p>
+        
+        <div class="member-section">
+          <h3>💡 Expertise</h3>
+          <ul class="expertise-list">
+            <li>Business Analysis & Strategy</li>
+            <li>Market Research & Insights</li>
+            <li>Product Strategy & Positioning</li>
+            <li>Business Development & Growth</li>
+            <li>User Research & Feedback Analysis</li>
+          </ul>
+        </div>
+        
+        <div class="member-section">
+          <h3>🎯 Key Responsibilities</h3>
+          <ul class="responsibility-list">
+            <li>Business Strategy & Planning</li>
+            <li>Market Analysis & Competitive Research</li>
+            <li>User Research & Requirements Gathering</li>
+            <li>Growth Strategy & Expansion</li>
+            <li>Partnership & Collaboration Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <h2>Want to Get in Touch?</h2>
+      <p>
+        We're always happy to hear from creators, partners, and anyone interested in our mission. Whether you have questions, feedback, or collaboration ideas, feel free to reach out!
+      </p>
+      <a href="mailto:hoybeecreativsdigital@gmail.com" class="contact-button">
+        📧 Contact Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 PT. HOYBEE CREATIVS DIGITAL. All rights reserved.</p>
+    <p>Developed with ❤️ by <a href="/team.html">Hoybee Creativs Team</a></p>
+  </div>
+</body>
+
+</html>

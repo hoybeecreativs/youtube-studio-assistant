@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>About Us - YouTube Studio Assistant</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/images/favicon-512x512.png">
+  <meta name="theme-color" content="#4F46E5">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" crossorigin href="/assets/index-CeHq9Kcz.css">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #667eea;
+    }
+    
+    .nav-links a.active {
+      color: #667eea;
+      font-weight: 600;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .hero-section {
+      text-align: center;
+      margin-bottom: 4rem;
+      color: white;
+    }
+    
+    .hero-section h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .hero-section p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .content-section {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .content-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .content-section h2::before {
+      content: '';
+      width: 4px;
+      height: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+    
+    .content-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+    
+    .challenge-list {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .challenge-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .challenge-list li {
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      background: white;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      font-size: 1.05rem;
+      color: #2d3748;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .solution-item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .solution-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .solution-item p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      color: white;
+      margin: 0;
+    }
+    
+    .vision-mission {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .vision-box, .mission-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .vision-box h3, .mission-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .vision-box p, .mission-box p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: white;
+      margin: 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      background: #f7fafc;
+      border-radius: 12px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #667eea;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: #4a5568;
+      margin-top: 0.5rem;
+    }
+    
+    .footer {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    .footer p {
+      color: #4a5568;
+      margin: 0.5rem 0;
+    }
+    
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .vision-mission {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .content-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="/" class="logo">
+        <img src="/images/icon128.png" alt="Logo">
+        YouTube Studio Assistant
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/about.html" class="active">About</a>
+        <a href="/team.html">Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <h1>About Hoybee Creativs</h1>
+      <p>Empowering content creators worldwide with AI-powered tools that save time and unlock global reach</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Introduction -->
+    <div class="content-section">
+      <h2>Who We Are</h2>
+      <p>
+        Hoybee Creativs was founded on August 21, 2025, with a clear mission: to empower content creators around the world. We believe that every creator deserves access to powerful yet easy-to-use tools that help them optimize their content without spending hours on administrative tasks.
+      </p>
+      <p>
+        As a bootstrap startup, we are building our products with passion, dedication, and a deep understanding of the challenges creators face every day. Our flagship product, YouTube Studio Assistant, is the result of countless hours of research, development, and direct feedback from the creator community.
+      </p>
+    </div>
+
+    <!-- Problem Statement -->
+    <div class="content-section">
+      <h2>The Problem We're Solving</h2>
+      <p>
+        Every day, millions of YouTube creators spend valuable time creating optimal video metadata—titles, descriptions, tags, and translations. This is repetitive work that takes them away from what they truly excel at: creating high-quality content.
+      </p>
+      
+      <div class="challenge-list">
+        <h3 style="margin-top: 0; color: #1a1a1a; font-size: 1.3rem;">Key Challenges We Identified:</h3>
+        <ul>
+          <li>🕐 Creators spend an average of 30-60 minutes per video just creating metadata</li>
+          <li>🌍 Reaching a global audience requires manual translation into multiple languages</li>
+          <li>📈 Creating SEO-optimized titles and descriptions requires specialized expertise</li>
+          <li>🔧 Existing tools are not integrated directly with YouTube Studio</li>
+        </ul>
+      </div>
+      
+      <p>
+        These challenges led us to create a solution that addresses all these pain points in one seamless, integrated experience.
+      </p>
+    </div>
+
+    <!-- Solution -->
+    <div class="content-section">
+      <h2>Our Solution</h2>
+      <p>
+        YouTube Studio Assistant is a Chrome extension that integrates AI capabilities directly into YouTube Studio. With a single click, creators can:
+      </p>
+      
+      <div class="solution-grid">
+        <div class="solution-item">
+          <h4>🤖 AI Content Generation</h4>
+          <p>Generate viral titles, engaging descriptions, and SEO-optimized tags using advanced AI models</p>
+        </div>
+        <div class="solution-item">
+          <h4>🌐 Auto-Translation</h4>
+          <p>Translate metadata to 110+ languages instantly, reaching a global audience</p>
+        </div>
+        <div class="solution-item">
+          <h4>🎨 Customization</h4>
+          <p>Customize output style to match your brand voice perfectly</p>
+        </div>
+        <div class="solution-item">
+          <h4>⚡ Seamless Integration</h4>
+          <p>Work directly in YouTube Studio without switching between applications</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target Market -->
+    <div class="content-section">
+      <h2>Who We Serve</h2>
+      <p>
+        Our primary target market is YouTube creators worldwide who want to save time, reach a global audience, and maximize their content's potential. We serve creators across all niches:
+      </p>
+      <p style="text-align: center; font-size: 1.2rem; color: #667eea; font-weight: 600; margin: 2rem 0;">
+        Gaming • Education • Entertainment • Business • Technology • Lifestyle • And More
+      </p>
+      <p>
+        Whether you're a solo creator just starting out or an established channel with millions of subscribers, YouTube Studio Assistant helps you focus on what matters most: creating amazing content.
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div class="content-section">
+      <h2>Our Impact</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">110+</div>
+          <div class="stat-label">Languages Supported</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">AI Providers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">v1.0</div>
+          <div class="stat-label">Production Ready</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Unlimited Potential</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="content-section">
+      <h2>Our Vision & Mission</h2>
+      <div class="vision-mission">
+        <div class="vision-box">
+          <h3>🎯 Vision</h3>
+          <p>
+            To become the leading AI platform that empowers content creators to reach their maximum potential and connect with audiences worldwide.
+          </p>
+        </div>
+        <div class="mission-box">
+          <h3>🚀 Mission</h3>
+          <p>
+            To provide innovative, accessible, and affordable AI tools that help creators optimize their content and reach global audiences effortlessly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Company Info -->
+    <div class="content-section">
+      <h2>Company Information</h2>
+      <p><strong>Legal Name:</strong> PT. Hoybee Creativs Digital</p>
+      <p><strong>Founded:</strong> August 21, 2025</p>
+      <p><strong>Type:</strong> Bootstrap Startup (Independently Funded)</p>
+      <p><strong>Location:</strong> Indonesia</p>
+      <p><strong>Website:</strong> <a href="https://youtubestudioassistant.website" style="color: #667eea; text-decoration: none; font-weight: 600;">youtubestudioassistant.website</a></p>
+      <p><strong>Contact:</strong> <a href="mailto:hoybeecreativsdigital@gmail.com" style="color: #667eea; text-decoration: none; font-weight: 600;">hoybeecreativsdigital@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 PT. HOYBEE CREATIVS DIGITAL. All rights reserved.</p>
+    <p>Developed with ❤️ by <a href="/team.html">Hoybee Creativs Team</a></p>
+  </div>
+</body>
+
+</html>
