@@ -114,6 +114,53 @@ Error generating stack: `+l.message+`
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    
+    <!-- Custom script to add About and Team links to footer -->
+    <script>
+      // Wait for React to finish rendering
+      function addFooterLinks() {
+        // Find all links in the footer
+        const allLinks = Array.from(document.querySelectorAll('a'));
+        
+        // Find the Features link in footer (not in nav)
+        const footerLinks = allLinks.filter(a => {
+          const rect = a.getBoundingClientRect();
+          return rect.top > window.innerHeight * 0.5; // Links in bottom half of page
+        });
+        
+        const featuresLink = footerLinks.find(a => a.textContent.trim() === 'Features');
+        
+        if (featuresLink && !document.querySelector('a[href="/about.html"]')) {
+          // Create About link
+          const aboutLink = document.createElement('a');
+          aboutLink.href = '/about.html';
+          aboutLink.textContent = 'About';
+          aboutLink.className = featuresLink.className;
+          
+          // Create Team link
+          const teamLink = document.createElement('a');
+          teamLink.href = '/team.html';
+          teamLink.textContent = 'Team';
+          teamLink.className = featuresLink.className;
+          
+          // Insert after Features link
+          featuresLink.parentNode.insertBefore(aboutLink, featuresLink.nextSibling);
+          aboutLink.parentNode.insertBefore(teamLink, aboutLink.nextSibling);
+          
+          console.log('About and Team links added to footer');
+        } else {
+          // Retry after a short delay if React hasn't finished rendering
+          setTimeout(addFooterLinks, 100);
+        }
+      }
+      
+      // Start trying to add links after page load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addFooterLinks);
+      } else {
+        addFooterLinks();
+      }
+    </script>
   </body>
 
 </html>
